@@ -1,5 +1,4 @@
 const express = require('express');
-const db = require('./database.js');
 const myAwesomeRoute = require('./route.js');
 
 const app = express();

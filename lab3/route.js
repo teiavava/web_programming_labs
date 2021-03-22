@@ -3,9 +3,14 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (req, res) => {
+    try {
     const book = req.body.book;
     db.insertIntoDb(book)
     res.send(`${JSON.stringify(book)}`);
+    }
+    catch(err) {
+        res.status(400).send('Invalid payload.');
+    }
 });
 
 router.get('/', (req, res) => {
@@ -14,42 +19,72 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    const paramId = req.params.id;
-    book = db.getFromDbById(parseInt(paramId))
-    res.send(`${JSON.stringify(book)}`);
+    try{
+        const paramId = req.params.id;
+        book = db.getFromDbById(parseInt(paramId))
+        res.send(`${JSON.stringify(book)}`);
+    }
+    catch(err) {
+        res.status(404).send('Id not found.');
+    }
 });
 
 router.get('/author/:author', (req, res) => {
-    const paramAuthor = req.params.author;
-    book = db.getFromDbByAuthor(paramAuthor)
-    res.send(`${JSON.stringify(book)}`);
+    try{
+        const paramAuthor = req.params.author;
+        book = db.getFromDbByAuthor(paramAuthor)
+        res.send(`${JSON.stringify(book)}`);
+    }
+    catch(err) {
+        res.status(404).send('Author not found.');
+    }
 });
 
 router.put('/:id', (req, res) => {
-    const payload = req.body;
-    const id = req.params.id;
+    try {
+        const payload = req.body;
+        const id = req.params.id;
 
-    console.log(`${JSON.stringify(payload)}`)
-    book = db.updateById(id, payload)
-    res.send(``);
+        console.log(`${JSON.stringify(payload)}`)
+        book = db.updateById(id, payload)
+        res.send(``);
+    }
+    catch(err) {
+        res.status(404).send('Id not found.');
+    }
 });
 
 router.delete('/:id', (req, res) => {
-    const paramId = req.params.id;
-    book = db.removeFromDbById(parseInt(paramId))
-    res.send(``);
+    try {
+        const paramId = req.params.id;
+        book = db.removeFromDbById(parseInt(paramId))
+        res.send(``);
+    }
+    catch(err) {
+        res.status(404).send('Id not found.');
+    }
 });
 
 router.delete('/author/:author_', (req, res) => {
-    const paramAuthor = req.params.author_;
+    try {
+        const paramAuthor = req.params.author_;
 
-    book = db.removeFromDbByAuthor(paramAuthor)
-    res.send(``);
+        book = db.removeFromDbByAuthor(paramAuthor)
+        res.send(``);
+    }
+    catch(err) {
+        res.status(404).send('Author not found.');
+    }
 });
 
 router.delete('/', (req, res) => {
-    db.purgeDb()
-    res.send(``);
+    try {
+        db.purgeDb()
+        res.send(``);
+    }
+    catch(err) {
+        res.status(500).send('Server unavailable.');
+    }
 });
 
 module.exports = router;

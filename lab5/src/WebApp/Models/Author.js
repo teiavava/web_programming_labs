@@ -8,7 +8,7 @@ class AuthorPostBody {
         if (this.firstName == null || this.firstName.length < 4) {
             throw new ServerError("First name is missing", 400);
         }
-    
+
         if (this.lastName == null || this.lastName.length < 4) {
             throw new ServerError("Last name is missing", 400);
         }

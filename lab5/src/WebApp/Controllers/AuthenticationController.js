@@ -22,7 +22,7 @@ Router.post('/register', async (req, res) => {
 Router.post('/login', async (req, res) => {
     const userBody = new UserBody(req.body);
     const userDto = await UsersManager.authenticateAsync(userBody.Username, userBody.Password);
-    const user = new UserLoginResponse(userDto.Token, userDto.Role);
+    const user = new UserLoginResponse(userDto.Token, userDto.Role, userDto.RoleId);
 
     ResponseFilter.setResponseDetails(res, 200, user);
 });

@@ -36,9 +36,10 @@ class UserRegisterRepsonse {
     }
 }
 class UserLoginResponse {
-    constructor(token, role) {
+    constructor(token, role, role_id) {
         this.role = role;
         this.token = token;
+        this.role_id = role_id
     }
 }
 module.exports =  {

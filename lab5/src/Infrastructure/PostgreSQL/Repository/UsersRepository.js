@@ -8,10 +8,10 @@ const getAllAsync = async() => {
     return await queryAsync('SELECT id, username, role_id FROM users');
 };
 
-const addAsync = async (username, password) => {
+const addAsync = async (username, password, role_id) => {
     console.info(`Adding user ${username}`);
 
-    const users = await queryAsync('INSERT INTO users (username, password, role_id) VALUES ($1, $2, $3) RETURNING id, username, role_id', [username, password, 3]);
+    const users = await queryAsync('INSERT INTO users (username, password, role_id) VALUES ($1, $2, $3) RETURNING id, username, role_id', [username, password, role_id]);
     return users[0];
 };
 

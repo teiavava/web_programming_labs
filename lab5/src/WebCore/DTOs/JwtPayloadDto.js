@@ -1,8 +1,9 @@
 class JwtPayloadDto {
 
-    constructor(userId, userRole) {
+    constructor(userId, userRole, userRoleId) {
         this.userId = userId;
         this.userRole = userRole;
+        this.userRoleId = userRoleId;
     }
 
     get UserId () {
@@ -11,6 +12,10 @@ class JwtPayloadDto {
 
     get UserRole () {
         return this.userRole;
+    }
+
+    get UserRoleId () {
+        return this.userRoleId;
     }
 }
 

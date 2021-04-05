@@ -32,8 +32,8 @@ const authenticateAsync = async (username, plainTextPassword) => {
     // var encryptedPassword = await bcrypt.hash(plainTextPassword, salt)
 
     if (await bcrypt.compare(plainTextPassword, user.password)) {
-        var token = await generateTokenAsync(new JwtPayloadDto(user.id, user.role));
-        return new AuthenticatedUserDto(token, user.username, user.role)
+        var token = await generateTokenAsync(new JwtPayloadDto(user.id, user.role, user.role_id));
+        return new AuthenticatedUserDto(token, user.username, user.role, user.role_id)
     } else {
         throw new ServerError(`Parola incorecta!`, 403);
     }
@@ -51,7 +51,7 @@ const registerAsync = async (username, plainTextPassword) => {
     var salt = bcrypt.genSaltSync(10);
     var encryptedPassword = await bcrypt.hash(plainTextPassword, salt)
 
-    var user = await UsersRepository.addAsync(username, encryptedPassword)
+    var user = await UsersRepository.addAsync(username, encryptedPassword, 3)
 
     return new RegisteredUserDto(user.id, user.username, user.role_id)
 };

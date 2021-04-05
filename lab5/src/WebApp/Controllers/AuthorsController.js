@@ -5,10 +5,11 @@ const ServerError = require('../Models/ServerError.js');
 const { AuthorPostBody, AuthorPutBody, AuthorResponse } = require('../Models/Author.js');
 
 const ResponseFilter = require('../Filters/ResponseFilter.js');
+const AuthorizationFilter = require('../Filters/AuthorizationFilter.js');
 
 const Router = express.Router();
 
-Router.post('/', async (req, res) => {
+Router.post('/', AuthorizationFilter.authorizeRoles('ADMIN', 'MANAGER'),  async (req, res) => {
     
     const authorBody = new AuthorPostBody(req.body);
 
@@ -44,7 +45,7 @@ Router.get('/:id', async (req, res) => {
     ResponseFilter.setResponseDetails(res, 200, new AuthorResponse(author));
 });
 
-Router.put('/:id', async (req, res) => {
+Router.put('/:id', AuthorizationFilter.authorizeRoles('ADMIN', 'MANAGER'), async (req, res) => {
 
     const authorBody = new AuthorPutBody(req.body, req.params.id);
 
@@ -57,7 +58,7 @@ Router.put('/:id', async (req, res) => {
     ResponseFilter.setResponseDetails(res, 200, new AuthorResponse(author));
 });
 
-Router.delete('/:id', async (req, res) => {
+Router.delete('/:id', AuthorizationFilter.authorizeRoles('ADMIN', 'MANAGER'), async (req, res) => {
     const {
         id
     } = req.params;

@@ -15,6 +15,13 @@ const generateTokenAsync = async (payload) => {
     /*
      payload este JwtPayloadDto
     */
+   try {
+        var token = jwt.sign({userId: payload.userId, userRole: payload.userRole}, process.env.JWT_SECRET_KEY);
+        return token;
+    } catch (err) {
+        console.trace(err);
+        throw new ServerError("Eroare la generarea tokenului!", 400);
+    }
 };
 
 const verifyAndDecodeDataAsync = async (token) => {

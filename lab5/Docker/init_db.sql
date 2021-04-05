@@ -35,4 +35,7 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 INSERT INTO roles (value) VALUES ('ADMIN');
+INSERT INTO roles (value) VALUES ('MANAGER');
+INSERT INTO roles (value) VALUES ('USER');
+
 INSERT INTO users (username, password, role_id) VALUES ('admin', '$2y$10$BLMZFAnCPXX0cVRmdPP3Meu3NR/xWucAyQ4aAW2z57RlLdLPvH0Hi', 1);

@@ -13,7 +13,7 @@ const ResponseFilter = require('../Filters/ResponseFilter.js');
 const Router = express.Router();
 
 Router.post('/', AuthorizationFilter.authorizeRoles('ADMIN'), async (req, res) => {
-    
+
     const roleBody = new RolePostBody(req.body);
 
     const role = await RolesRepository.addAsync(roleBody.Value);

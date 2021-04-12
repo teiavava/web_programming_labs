@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ro">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         * {
+         box-sizing: border-box;
+         }
+         input[type=text], select, textarea {
+         width: 100%;
+         padding: 2px;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         box-sizing: border-box;
+         margin-top: 6px;
+         margin-bottom: 16px;
+         resize: vertical;
+         }
+         input[type=submit] {
+         background-color: #4CAF50;
+         color: white;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         }
+         /* Add a gray background color with some padding */
+         .container {
+         font-family: Arial;
+         padding-top: 20px;
+         background: #CCFFFF;
+         width: 800px;
+         }
+         /* Header/Blog Title */
+         .header {
+         padding: 30px;
+         font-size: 40px;
+         text-align: center;
+         background: green;
+         }
+         /* Fake image */
+         .fakeimg {
+         background-color: #aaa;
+         width: 100%;
+         padding: 20px;
+         }
+         /* Add a card effect for articles */
+         .main {
+         background-color: #0080ff;
+         width: 600px;
+         margin-top: 20px;
+         }
+         .nav {
+         background-color: #B266FF;
+         width: 600px;
+         margin-top: 20px;
+         }
+         .content {
+         background-color: orange;
+         padding: 10px;
+         margin-top: 20px;
+         content: "";
+         display: table;
+         clear: both;
+         width: 800px;
+         }
+         .form {
+         background-color: gray;
+         padding: 20px;
+         margin-top: 20px;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .column1 {
+         float: left;
+         width: 600px;
+         padding: 10px;
+         }
+         .column2 {
+         float: left;
+         width: 180px;
+         padding: 10px;
+         }
+         /* Footer */
+         .footer {
+         padding: 20px;
+         text-align: center;
+         background: #000000;
+         color: white;
+         margin-top: 20px;
+         }
+         /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+         @media screen and (max-width: 800px) {
+         .leftcolumn, .rightcolumn {   
+         width: 100%;
+         padding: 0;
+         }
+         }
+         table {
+         font-family: arial, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+         }
+         td, th {
+         border: 1px solid #dddddd;
+         text-align: left;
+         padding: 0px;
+         }
+         tr:nth-child(even) {
+         background-color: #dddddd;
+         }
+         tr:nth-child(odd) {
+         background-color: green;
+         }
+      </style>
+      <title>Programare pentru Copii</title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="header">
+            <h2>Blog de programator</h2>
+         </div>
+         <div class="content">
+            <div class="column1">
+               <div class="main">
+                  <h2>Workshop de programare pentru copii si adolescenti</h2>
+                  <h5>Invata sa creezi propriile jocuri si aplicatii!</h5>
+                  <h6>Dec 7, 2017</h6>
+                  <img src="https://i0.wp.com/www.kidtocode.com/wp-content/uploads/2020/05/Coding_A.jpg?fit=668%2C445&ssl=1" alt="Kids programming" style="width:500px;">
+                  <p>Te poti inscrie la workshopul potrivit varstei tale si timp de o ora vom lucra impreuna pentru a obtine propriul joc, de data aceasta programat chiar de tine!</p>
+                  <p>8-12 ani – vom folosi programul Scratch pentru a crea un joc digital. Vom invata conceptele de baza in programare, cum sunt bucla, conditia, declansatorii si vom invata sa facem o animatie!</p>
+                  <p> 13-18 ani – vom folosi programul Greenfoot pentru a invata despre bazele limbajului Java si vom programa impreuna, folosind elemente vizuale dar si programare in linie de cod, primul nostru proiect in Java, un joc! </p>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/j-3eArinB7E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               </div>
+            </div>
+            <div class="column2">
+               <div class="nav">
+                  <h2>Poate te intereseaza si...</h2>
+                  <table>
+                     <tr>
+                        <th>Blog</th>
+                        <th>Link</th>
+                     </tr>
+                     <tr>
+                        <td>Wellcode</td>
+                        <td>https://wellcode.ro/blog/</td>
+                     </tr>
+                     <tr>
+                        <td>Sandor's Blog</td>
+                        <td>https://sandorkovacs84.wordpress.com/</td>
+                     </tr>
+                     <tr>
+                        <td>DevMind</td>
+                        <td>https://www.devmind.ro/blog</td>
+                     </tr>
+                     <tr>
+                        <td>CodeCool</td>
+                        <td>https://codecool.com/ro/blog/ce-face-un-programator/</td>
+                     </tr>
+                     <tr>
+                        <td>Logischool</td>
+                        <td>https://www.logiscool.com/ro/blog/2019-02/limbaje-programare-copii</td>
+                     </tr>
+                     <tr>
+                        <td>ArhiBlog</td>
+                        <td>https://arhiblog.ro/inceapa-copil-lectiile-programare/</td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="form">
+            <h2>Feedback</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <form action="/action_page.php">
+               <label for="email">Email</label>
+               <input type="text" id="email" name="Email" placeholder="Email">
+               <label for="calificativ">Calificativ</label>
+               <select id="calificativ" name="calificativ">
+                  <option value="foarte bine">Foarte bine</option>
+                  <option value="bine">Bine</option>
+                  <option value="neutru">Neutru</option>
+                  <option value="satisfacator">Satisfacator</option>
+                  <option value="nesatisfacator">Nesatisfacator</option>
+               </select>
+               <label for="comment">Comentariu</label>
+               <textarea id="comment" name="comment" placeholder="Scrie-ne ceva..." style="height:200px"></textarea>
+               <label for="notif">Aboneaza-te la newsletter:</label>
+               <input type="checkbox" id="notif">
+               <label for="accept">Accept Termenii si Conditiile:</label>
+               <input type="checkbox" id="accept">
+               <input type="submit" value="Trimite">
+            </form>
+         </div>
+         <div class="footer">
+            <h5>Contacteaza-ne la amd@gmail.com</h5>
+            <h6>© 2021 Academia Micilor Developeri.</h6>
+         </div>
+      </div>
+   </body>
+</html>

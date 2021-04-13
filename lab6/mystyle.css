@@ -1,6 +1,6 @@
 * {
-    box-sizing: border-box;
-    }
+box-sizing: border-box;
+}
 input[type=text], select, textarea {
 width: 100%;
 padding: 2px;
@@ -102,8 +102,8 @@ word-wrap: break-word;
 max-width: 80px;
 }
 tr:nth-child(even) {
-    background-color: #dddddd;
+background-color: #dddddd;
 }
 tr:nth-child(odd) {
-    background-color: green;
+background-color: green;
 }

@@ -50,7 +50,7 @@ Router.put('/:id', AuthorizationFilter.authorizeRoles('ADMIN', 'MANAGER'), async
     const authorBody = new AuthorPutBody(req.body, req.params.id);
 
     const author = await AuthorsRepository.updateByIdAsync(authorBody.Id, authorBody.FirstName, authorBody.LastName);
-        
+
     if (!author) {
         throw new ServerError(`Author with id ${id} does not exist!`, 404);
     }

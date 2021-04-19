@@ -1,0 +1,106 @@
+.small_footer{
+    display: flex;
+    background-color: #4b4b4b;
+    position: fixed;
+    bottom: 30%;
+    left: 0;
+    height: 12%;
+    width: 100%;
+}
+
+.main_footer{
+    padding: 1vw;
+    background-color: lightgray;
+    position: fixed;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+}
+
+.col1-small-footer {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 2%;
+    color: white;
+}
+
+.col2-small-footer {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 2%;
+    color: white;
+}
+
+.small-column {
+    float: left;
+    width: 10%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    float: left;
+    padding-bottom: 3px;
+    width: 10%;
+    clear: both;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: #4b4b4b;
+}
+
+.white-square {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+}
+
+.rounded-white-square {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0;
+}
+
+.large-column {
+    float: left;
+    width: 30%;
+}
+
+.h41 {
+    font-family: "Courier New", monospace;
+    font-weight: lighter;
+    color: #4b4b4b;
+}
+
+.h42 {
+    font-family: "Courier New", monospace;
+    font-weight: normal;
+    color: #4b4b4b;
+}
+
+.h43 {
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: #4b4b4b;
+}
+
+.h44 {
+    font-family: "Courier New", monospace;
+    font-weight: lighter;
+    color: white;
+}
+
+.h45 {
+    font-family: "Courier New", monospace;
+    font-weight: normal;
+    color: white;
+}
+
+.h46 {
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: white;
+}

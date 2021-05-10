@@ -1,0 +1,29 @@
+.author{
+    display: flex;
+    background-color: #3f3d56;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    position: center;
+    width: 30%;
+    border-style: solid;
+    border-color: gray;
+    box-shadow: gray;
+    margin-bottom: .8rem;
+    margin-left: 35%;
+    margin-top: 2%;
+}
+
+.col2 {
+    flex: 1.5 0.5 auto;
+    text-align: center;
+    background-color: white;
+    width: 5%;
+}
+
+.col1 {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 3%;
+    color: white;
+    background-color: #3f3d56;
+}

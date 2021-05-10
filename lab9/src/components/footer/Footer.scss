@@ -1,0 +1,25 @@
+.small_footer{
+    display: flex;
+    background-color: #3f3d56;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 12%;
+    width: 100%;
+}
+
+.col1-small-footer {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 3%;
+    color: white;
+}
+
+.col2-small-footer {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 3%;
+    color: white;
+}

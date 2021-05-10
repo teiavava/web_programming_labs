@@ -1,0 +1,21 @@
+.my-header{
+    display: flex;
+    border-bottom: 1px solid;
+    border-color: lightgray;
+    border-width: 5px;
+    top: 0;
+    height: 80px;
+    width: 100%;
+}
+
+.one {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.two {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 2%;
+}

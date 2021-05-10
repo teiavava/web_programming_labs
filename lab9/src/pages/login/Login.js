@@ -15,17 +15,17 @@ export default function Login() {
     async function onLoginClick(){
         try{
             await api.login(username, password)
-            return <Redirect to={"/books"}/>
             setLoggedIn(true);
-            console.log("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
+            // console.log("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
             globalData.setLoggedIn(true);
+            return <Redirect to={"/books"}/>
         } catch (e){
             console.log("NOT OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
             setError("Login Error")
         }
     }
 
-    if(loggedIn){
+    if (loggedIn){
         return <Redirect to={"/books"}/>
     }
 

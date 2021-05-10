@@ -17,17 +17,15 @@ let globalData = {user: {}}
 
 async function login(username, pass) {
     let res = await axios.post(API_HOST + "/users/login", {username: username, password: pass});
-
-    console.log(API_HOST + "/users/login")
     if (res.status === 200) {
-        console.log("****************************************************")
-        // token = res.data.response.access_token;
+        token = res.data.response.access_token;
         user = {
             username: username,
             password: pass
         }
-        // localStorage.setItem("token", token);
-        // localStorage.setItem("user", JSON.stringify(user));
+        console.log(res.data)
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(user));
         globalData.user = user;
     }
     return res;
@@ -35,7 +33,7 @@ async function login(username, pass) {
 
 async function register(username, password, email) {
     let res = await axios.post(API_HOST + "/users", {username: username, password: password, email: email});
-    if (res.status === 201) {
+    if (res.status === 200) {
         token = res.data.access_token;
         user = {
             email: res.data.email,

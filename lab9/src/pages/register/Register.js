@@ -11,27 +11,20 @@ export default function Register() {
     let [email, setEmail] = useState("")
     let [password, setPassword] = useState("")
     let [error, setError] = useState("")
-    let [loggedIn, setLoggedIn] = useState(false)
     let [register, setRegister] = useState(false)
 
     async function onRegisterClick(){
         try{
             await api.register(username, password, email)
-            setLoggedIn(true);
-            console.log("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
+            setRegister(true);
             globalData.setLoggedIn(true);
         } catch (e){
-            console.log("NOT OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
-            setError("Login Error")
+            setError("Register Error")
         }
     }
 
-    if(loggedIn){
-        return <Redirect to={"/"}/>
-    }
-
     if(register){
-        return <Redirect to={"/register"}/>
+        return <Redirect to={"/books"}/>
     }
 
     return (

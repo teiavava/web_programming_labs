@@ -15,6 +15,7 @@ export default function Login() {
     async function onLoginClick(){
         try{
             await api.login(username, password)
+            return <Redirect to={"/books"}/>
             setLoggedIn(true);
             console.log("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
             globalData.setLoggedIn(true);
